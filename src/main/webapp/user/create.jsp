@@ -9,46 +9,44 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>User Management Application</title>
+    <title>Create new user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-<center>
-    <h1>User Management</h1>
-    <h2>
-        <a href="user?action=users">List All Users</a>
-    </h2>
-</center>
-<div align="center">
-    <form method="post">
-        <table border="1" cellpadding="5">
-            <caption>
-                <h2>Add New User</h2>
-            </caption>
-            <tr>
-                <th>User Name:</th>
-                <td>
-                    <input type="text" name="name" id="name" size="45"/>
-                </td>
-            </tr>
-            <tr>
-                <th>User Email:</th>
-                <td>
-                    <input type="text" name="email" id="email" size="45"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Country:</th>
-                <td>
-                    <input type="text" name="country" id="country" size="15"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Save"/>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="container mt-4">
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0"><i class="bi bi-person-plus"></i> Add New User</h3>
+        </div>
+        <div class="card-body">
+            <form action="/user?action=create" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Country</label>
+                    <input type="text" name="country" class="form-control" required>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save
+                    </button>
+                    <a href="/user" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Back
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
