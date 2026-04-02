@@ -18,7 +18,6 @@ import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/user")
 public class UserServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private IUserService userService;
 
     @Override
